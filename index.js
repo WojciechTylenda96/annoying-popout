@@ -21,6 +21,15 @@ consentForm.addEventListener("submit", function(event){
                 Uploading your data to the dark web...
             </p>
         </div>`
+    setTimeout(function(){
+        modalText.innerHTML =`
+        <div class="modal-inner-loading">
+            <img src="images/loading.svg" class="loading">
+            <p id="uploadText">
+                Making the sale...
+            </p>
+        </div>`
+    }, 1500)
     console.log("form submitted")
 });
 
