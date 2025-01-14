@@ -2,8 +2,7 @@
 const modalEl = document.getElementById("modal");
 const modalCloseBtn = document.getElementById("modal-close-btn");
 const consentForm = document.getElementById("consent-form");
-const modalText = document.getElementById("modal-text")
-const modalInner = document.getElementById("modal-inner")
+const modalText = document.getElementById("modal-text");
 
 setTimeout(function(){
     modalEl.style.display = "inline"
@@ -14,6 +13,10 @@ modalCloseBtn.addEventListener("click", function(){
 });
 
 consentForm.addEventListener("submit", function(event){
+
+    const consentFormData = new FormData(consentForm);
+    const name = consentFormData.get("name")
+
     event.preventDefault()
     modalText.innerHTML =`
         <div class="modal-inner-loading">
@@ -28,8 +31,8 @@ consentForm.addEventListener("submit", function(event){
     }, 1500)
     
     setTimeout(function(){
-        modalInner.innerHTML = `
-            <h2>Thanks you sucker! </h2>
+        document.getElementById("modal-inner").innerHTML = `
+            <h2>Thanks <span class="modal-display-name">${name}</span>, you sucker! </h2>
             <p>We just sold the rights to your eternal soul.</p>
             <div class="idiot-gif">
                 <img src="images/pirate.gif">
