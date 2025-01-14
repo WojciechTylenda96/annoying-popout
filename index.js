@@ -22,7 +22,7 @@ consentForm.addEventListener("submit", function(event){
             </p>
         </div>`
     setTimeout(function(){
-        document.getElementById("upload-text").innerHTML = "Making the sale...";
+        document.getElementById("upload-text").innerText = "Making the sale...";
     }, 1500)
     console.log("form submitted")
 });
