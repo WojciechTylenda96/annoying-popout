@@ -17,18 +17,13 @@ consentForm.addEventListener("submit", function(event){
     modalText.innerHTML =`
         <div class="modal-inner-loading">
             <img src="images/loading.svg" class="loading">
-            <p id="uploadText">
+            <p id="upload-text">
                 Uploading your data to the dark web...
             </p>
         </div>`
     setTimeout(function(){
-        modalText.innerHTML =`
-        <div class="modal-inner-loading">
-            <img src="images/loading.svg" class="loading">
-            <p id="uploadText">
-                Making the sale...
-            </p>
-        </div>`
+        const uploadText = document.getElementById("upload-text");
+        uploadText.innerHTML = "Making the sale..."
     }, 1500)
     console.log("form submitted")
 });
