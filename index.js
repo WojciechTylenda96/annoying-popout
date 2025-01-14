@@ -3,6 +3,7 @@ const modalEl = document.getElementById("modal");
 const modalCloseBtn = document.getElementById("modal-close-btn");
 const consentForm = document.getElementById("consent-form");
 const modalText = document.getElementById("modal-text");
+const declineBtn = document.getElementById("decline-btn")
 
 setTimeout(function(){
     modalEl.style.display = "inline"
@@ -11,6 +12,10 @@ setTimeout(function(){
 modalCloseBtn.addEventListener("click", function(){
     modalEl.style.display = "none"
 });
+
+declineBtn.addEventListener("mouseenter", function(){
+    console.log("hovered")
+})
 
 consentForm.addEventListener("submit", function(event){
 
@@ -38,6 +43,7 @@ consentForm.addEventListener("submit", function(event){
                 <img src="images/pirate.gif">
             </div>
         ` 
+        modalCloseBtn.disabled = false
     }, 3000)
 });
 
